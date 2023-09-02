@@ -53,9 +53,9 @@ export default function Customers() {
             {customers
                 ? customers.map((customer) => {
                       return (
-                          <div className="m-2" key={customer.id}>
-                              <Link to={'/customers/' + customer.id}>
-                                  <button className="no-underline bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+                          <div className="m-2" key={customer._id}>
+                              <Link to={'/customers/' + customer._id}>
+                                  <button className="px-4 py-2 font-bold text-white no-underline bg-purple-600 rounded hover:bg-purple-700">
                                       {customer.name}
                                   </button>
                               </Link>

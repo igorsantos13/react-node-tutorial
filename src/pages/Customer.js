@@ -68,7 +68,7 @@ export default function Customer() {
         e.preventDefault();
         const url = baseUrl + 'api/customers/' + id;
         fetch(url, {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: 'Bearer ' + localStorage.getItem('access'),
@@ -108,14 +108,14 @@ export default function Customer() {
                         id="customer"
                         onSubmit={updateCustomer}
                     >
-                        <div className="md:flex md:items-center mb-6">
+                        <div className="mb-6 md:flex md:items-center">
                             <div className="md:w-1/4">
                                 <label for="name">Name</label>
                             </div>
 
                             <div className="md:w-3/4">
                                 <input
-                                    className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                                    className="w-full px-4 py-2 leading-tight text-gray-700 bg-gray-200 border-2 border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-purple-500"
                                     id="name"
                                     type="text"
                                     value={tempCustomer.name}
@@ -130,7 +130,7 @@ export default function Customer() {
                             </div>
                         </div>
 
-                        <div className="md:flex md:items-center mb-6">
+                        <div className="mb-6 md:flex md:items-center">
                             <div className="md:w-1/4">
                                 <label for="industry">Industry</label>
                             </div>
@@ -138,7 +138,7 @@ export default function Customer() {
                             <div className="md:w-3/4">
                                 <input
                                     id="industry"
-                                    className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                                    className="w-full px-4 py-2 leading-tight text-gray-700 bg-gray-200 border-2 border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-purple-500"
                                     type="text"
                                     value={tempCustomer.industry}
                                     onChange={(e) => {
@@ -155,7 +155,7 @@ export default function Customer() {
                     {changed ? (
                         <div className="mb-2">
                             <button
-                                className="bg-slate-400 hover:bg-slate-500 text-white font-bold py-2 px-4 mr-2 rounded"
+                                className="px-4 py-2 mr-2 font-bold text-white rounded bg-slate-400 hover:bg-slate-500"
                                 onClick={(e) => {
                                     setTempCustomer({ ...customer });
                                     setChanged(false);
@@ -165,7 +165,7 @@ export default function Customer() {
                             </button>
                             <button
                                 form="customer"
-                                className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+                                className="px-4 py-2 font-bold text-white bg-purple-600 rounded hover:bg-purple-700"
                             >
                                 Save
                             </button>
@@ -174,7 +174,7 @@ export default function Customer() {
 
                     <div>
                         <button
-                            className="bg-slate-800 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded"
+                            className="px-4 py-2 font-bold text-white rounded bg-slate-800 hover:bg-slate-500"
                             onClick={(e) => {
                                 const url = baseUrl + 'api/customers/' + id;
                                 fetch(url, {
@@ -217,7 +217,7 @@ export default function Customer() {
             {error ? <p>{error}</p> : null}
             <br />
             <Link to="/customers">
-                <button className="no-underline bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+                <button className="px-4 py-2 font-bold text-white no-underline bg-purple-600 rounded hover:bg-purple-700">
                     ← Go back
                 </button>
             </Link>
